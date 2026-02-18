@@ -1,0 +1,66 @@
+body {
+    background-color: black;
+    padding: 0;
+    margin: 0 auto;   
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    min-height: 100vh; 
+}
+
+.start-text {
+    font-size: 30px;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+}
+
+.words {
+    display: flex;
+    text-decoration: none;
+    font-size: 54px;
+    font-weight: 800;
+    width: 940px;
+    height: 240px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    position: relative;
+    
+    /* Gradient text */
+    background: linear-gradient(50deg, rgba(35, 81, 102, 1) 0%, rgba(41, 214, 113, 1) 50%, rgba(230, 207, 5, 1) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Gradient border using pseudo-element */
+.words::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 20px;
+    padding: 4px; /* Border thickness */
+    background: linear-gradient(50deg, rgba(35, 81, 102, 1) 0%, rgba(41, 214, 113, 1) 50%, rgba(230, 207, 5, 1) 100%);
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+.copyright {
+    font-size: 30px;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+}
